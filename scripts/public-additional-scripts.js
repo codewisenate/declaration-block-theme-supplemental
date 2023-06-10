@@ -1,4 +1,5 @@
 import { qs } from './utils';
+import './declaration/actions';
 /**
  * DOM manipulation.
  * @return {void}

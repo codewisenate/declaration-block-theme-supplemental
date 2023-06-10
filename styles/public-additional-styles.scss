@@ -1,11 +1,10 @@
+@import 'declaration/actions.scss';
+
+// * {
+// 	outline: 1px solid red;
+// }
+
 :root {
-	line-height: 1.5;
-	font-weight: 400;
-  
-	color-scheme: light dark;
-	color: $white;
-	background-color: $mineshaft;
-  
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -16,9 +15,36 @@
 body {
 	padding: 0;
 	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 840px;
-	min-height: 100vh;
 }
-  
+
+// WordPress gap fixes
+
+:where(.is-layout-flex) {
+	gap: 1.5rem;
+}
+
+.wp-block-post-template.is-flex-container {
+	gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+	.wp-block-post-template.is-flex-container.is-flex-container.columns-2 > li {
+	width: calc(50% - .625rem);
+	}
+}
+
+// Display exclusions
+
+.small-screen {
+	display: block;
+	@media (min-width: 1024px) {
+		display: none;
+	}
+}
+
+.large-screen {
+	display: none;
+	@media (min-width: 1024px) {
+		display: block;
+	}
+}
