@@ -1,5 +1,5 @@
-import { qs } from './utils';
 import './declaration/actions';
+import './declaration/expando';
 /**
  * DOM manipulation.
  * @return {void}
@@ -12,8 +12,7 @@ const domReady = () => {
 		/**
 		 * Test import of util – remove when ready to use.
 		 */
-		const body = qs('body');
-		console.log('body loaded', body);
+		const body = document.querySelector('body');
 	}, 0);
 };
 

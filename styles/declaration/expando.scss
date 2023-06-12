@@ -1,0 +1,155 @@
+.expando-group {
+
+	.expando-header {
+
+		.expando-button {
+			width: calc(100% + 2rem);
+
+			a {
+				position: relative;
+				margin-left: -1rem;
+				margin-right: 1rem;
+				padding-left: 2.5rem;
+				padding-right: 3rem;
+				width: calc(100% + 2rem);
+
+				&:hover,
+				&:focus {
+					outline: 0;
+				}
+
+				&:focus-visible {
+					outline: 2px solid var(--wp--preset--color--gray-80);
+				}
+
+				&::before {
+					transition: all 0.13333s ease-in-out;
+					rotate: 0deg;
+					background-repeat: no-repeat;
+					background-image: var(--expando-arrow);
+					background-repeat: no-repeat;
+					background-size: contain;
+					content: "";
+					display: block;
+					position: absolute;
+					height: 12px;
+					width: 24px;
+					left: 0.25rem;
+					scale: 85%;
+					top: 18px;
+
+					@media (min-width: 1024px) {
+						left: 0;
+						top: 24px;
+						scale: 100%;
+					}
+
+				}
+			}
+
+		}
+	}
+
+
+	&.closed {
+
+		.expando-header {
+
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+
+			.expando-button {
+
+				a {
+
+					&::before {
+						rotate: -90deg;
+
+						@media (min-width: 1024px) {
+							top: 22px;
+						}
+					}
+				}
+			}
+		}
+
+		.expando-content {
+			display: none;
+		}
+	}
+}
+
+
+.detailed-action-results-container {
+
+	.expando-group {
+
+		.expando-header {
+
+			border-radius: 1rem;
+			cursor: pointer;
+			position: relative;
+			padding-right: 6rem;
+
+			&:focus-visible {
+				outline: 2px solid var(--wp--preset--color--gray-80);
+			}
+
+			.wp-block-post-title {
+				margin: 1rem;
+				width: 4rem;
+				min-width: 4rem;
+				padding: 0;
+				border-radius: 2rem;
+				line-height: 4;
+				font-weight: 700;
+			}
+
+			.item-label {
+				font-weight: 700;
+			}
+
+			&::after {
+				transition: all 0.13333s ease-in-out;
+				rotate: -180deg;
+				background-repeat: no-repeat;
+				background-image: var(--expando-arrow);
+				background-repeat: no-repeat;
+				background-size: contain;
+				content: "";
+				display: block;
+				position: absolute;
+				height: 12px;
+				width: 24px;
+				right: 2rem;
+				scale: 85%;
+				top: 30px;
+				left: auto;
+
+				@media (min-width: 1024px) {
+					scale: 100%;
+				}
+
+			}
+
+
+
+
+		}
+
+		&.closed {
+
+			.wp-block-post-title,
+			.item-label {
+				font-weight: 400;
+			}
+
+			.expando-header {
+
+				&::after {
+					rotate: 0deg;
+				}
+			}
+		}
+	}
+}

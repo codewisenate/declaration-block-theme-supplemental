@@ -7,51 +7,64 @@
 		outline: 2px solid #222;
 	}
 
+	&::before,
+	&::after {
+		background-repeat: no-repeat;
+		content: "";
+		display: inline-block;
+	}
+
 	&.wp-block-mfb-meta-field-block {
 
 		height: 108px;
 		width: 108px;
 
 		.wp-block-query & {
-			scale: 66%;
+			scale: 75%;
+
 			@media (min-width: 1024px) {
-				scale: 75%;
+				scale: 66%;
+				left: -5%;
 			}
-			
+
+			@media (min-width: 1220px) {
+				scale: 75%;
+				left: 0;
+			}
 		}
 
-		&::before {
-			background-repeat: no-repeat;
-			content: "";
-			display: inline-block;
+		&::after {
+			scale: 110%;
 		}
 
 		&.stage {
 			&::after {
 				background-image: var(--level-0-bg);
 			}
+
 			&::before {
 				background-image: var(--stage-icon-level-0);
 			}
+
 			&.level-1 {
 				&::before {
 					background-image: var(--stage-icon-level-1);
 				}
 			}
-		
+
 			&.level-2 {
 				&::before {
 					background-image: var(--stage-icon-level-2);
 				}
-		
+
 			}
-		
+
 			&.level-3 {
 				&::before {
 					background-image: var(--stage-icon-level-3);
 				}
 			}
-		
+
 			&.level-4 {
 				&::before {
 					background-image: var(--stage-icon-level-4);
@@ -63,28 +76,30 @@
 			&::after {
 				background-image: var(--level-0-bg);
 			}
+
 			&::before {
 				background-image: var(--complexity-icon-level-0);
 			}
+
 			&.level-1 {
 				&::before {
 					background-image: var(--complexity-icon-level-1);
 				}
 			}
-		
+
 			&.level-2 {
 				&::before {
 					background-image: var(--complexity-icon-level-2);
 				}
-		
+
 			}
-		
+
 			&.level-3 {
 				&::before {
 					background-image: var(--complexity-icon-level-3);
 				}
 			}
-		
+
 			&.level-4 {
 				&::before {
 					background-image: var(--complexity-icon-level-4);
@@ -96,28 +111,30 @@
 			&::after {
 				background-image: var(--level-0-bg);
 			}
+
 			&::before {
 				background-image: var(--risks-icon-level-0);
 			}
+
 			&.level-1 {
 				&::before {
 					background-image: var(--risks-icon-level-1);
 				}
 			}
-		
+
 			&.level-2 {
 				&::before {
 					background-image: var(--risks-icon-level-2);
 				}
-		
+
 			}
-		
+
 			&.level-3 {
 				&::before {
 					background-image: var(--risks-icon-level-3);
 				}
 			}
-		
+
 			&.level-4 {
 				&::before {
 					background-image: var(--risks-icon-level-4);
@@ -129,28 +146,30 @@
 			&::after {
 				background-image: var(--level-0-bg);
 			}
+
 			&::before {
 				background-image: var(--engagement-icon-level-0);
 			}
+
 			&.level-1 {
 				&::before {
 					background-image: var(--engagement-icon-level-1);
 				}
 			}
-		
+
 			&.level-2 {
 				&::before {
 					background-image: var(--engagement-icon-level-2);
 				}
-		
+
 			}
-		
+
 			&.level-3 {
 				&::before {
 					background-image: var(--engagement-icon-level-3);
 				}
 			}
-		
+
 			&.level-4 {
 				&::before {
 					background-image: var(--engagement-icon-level-4);
@@ -163,20 +182,20 @@
 				background-image: var(--level-1-bg);
 			}
 		}
-	
+
 		&.level-2 {
 			&::after {
 				background-image: var(--level-2-bg);
 			}
-	
+
 		}
-	
+
 		&.level-3 {
 			&::after {
 				background-image: var(--level-3-bg);
 			}
 		}
-	
+
 		&.level-4 {
 			&::after {
 				background-image: var(--level-4-bg);
@@ -196,47 +215,55 @@
 		height: 100%;
 		min-height: auto;
 		width: 100%;
+		scale: 100%;
 	}
 
 	&::after {
 		position: absolute;
 		left: 0;
+		scale: 110%;
 	}
 
 	&.level-1 {
-		&::before {
+		&::after {
 			background-image: var(--level-1-bg);
 		}
 	}
 
 	&.level-2 {
-		&::before {
+		&::after {
 			background-image: var(--level-2-bg);
 		}
 
 	}
 
 	&.level-3 {
-		&::before {
+		&::after {
 			background-image: var(--level-3-bg);
 		}
 	}
 
 	&.level-4 {
-		&::before {
+		&::after {
 			background-image: var(--level-4-bg);
 		}
 	}
 }
 
-.wp-block-query:is(.large-screen) {
+.wp-block-query:not(.small-screen) {
 	.actions {
 		&.type-actions {
 			&:nth-child(even) {
 				.wp-block-group {
-					background-color: var(--wp--preset--color--custom-color-5) !important;
+					background-color: var(--wp--preset--color--custom-action-alt-grey-bg) !important;
 				}
 			}
 		}
+	}
+}
+
+.wp-block-query:not(.large-screen) {
+	.action-results-container {
+		gap: 0;
 	}
 }
