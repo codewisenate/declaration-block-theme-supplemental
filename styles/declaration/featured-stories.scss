@@ -1,0 +1,10 @@
+.featured-stories-loop {
+	
+	.featured-stories:nth-of-type(even) {
+		@media (min-width: 782px) {
+			.image-column {
+				order: 2;
+			}
+		}
+	}
+}
