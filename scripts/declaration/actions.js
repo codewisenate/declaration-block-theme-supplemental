@@ -54,28 +54,28 @@ const domReady = () => {
 
 					const warningLabel = {
 						'stage': [
-							'Action not started – salmon icon – not started level',
+							'Action not yet reporting – salmon icon – not reporting level',
 							'Action started – salmon icon – lowest level',
 							'Action in planning – salmon icon – mid-level',
 							'Action being implemented – salmon icon – high level',
 							'Action completed – salmon icon – transformed'
 						],
 						'complexity': [
-							'Complexity not determined – rock icon – not started',
+							'Complexity not determined – rock icon – not yet reporting level',
 							'Some complexity – rock icon – lowest level',
 							'Moderate complexity – rock icon – mid-level',
 							'Notable complexity – rock icon – high level',
 							'Complexity resolved – rock icon – transformed'
 						],
 						'risks': [
-							'Challenges not determined – Medicine bundle icon – not started',
+							'Challenges not determined – Medicine bundle icon – not yet reporting level',
 							'Some challenges – Medicine bundle icon – lowest level',
 							'Moderate challenges – Medicine bundle icon – mid-level',
 							'Notable challenges – Medicine bundle icon – high level',
 							'Challenges resolved – Medicine bundle icon – transformed'
 						],
 						'engagement': [
-							'Engagement not determined – weaving icon – not started',
+							'Engagement not determined – weaving icon – not yet reporting level',
 							'Some engagement – weaving icon – lowest level',
 							'Moderate engagement – weaving icon – mid-level',
 							'Notable engagement – weaving icon – high level',
@@ -181,9 +181,9 @@ const domReady = () => {
 			}
 
 			actionLabels.forEach(function (actionLabel) {
-				actionLabel.setAttribute('aria-label', `Action ${actionLabel.textContent}`);
 				if (hasLinkElement(actionLabel)) {
-					actionLabel.setAttribute('role', 'link');
+					// actionLabel.setAttribute('role', 'group');
+					actionLabel.querySelector('a').setAttribute('aria-label', `View Action ${actionLabel.textContent} details`);
 				} 
 			});
 		}

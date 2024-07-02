@@ -171,6 +171,9 @@ body.custom-declaration {
 
 	.rounded img {
 		@media (min-width: 601px) {
+			border-radius: 1rem 0 0 1rem;
+		}
+		@media (min-width: 1441px) {
 			border-radius: 1rem;
 		}
 	}

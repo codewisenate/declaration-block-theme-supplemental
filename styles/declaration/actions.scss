@@ -371,6 +371,7 @@ body.search {
 			padding: 0.25rem 0.66rem 0.5rem;
 			border-radius: 0.33rem;
 			border: 2px solid transparent;
+			white-space: nowrap;
 		}
 	}
 }
@@ -387,8 +388,8 @@ body.search {
 
 				a:is(:hover, :focus-visible) {
 					background-color: var(--wp--preset--color--custom-goal-#{$i});
-					border: 2px solid var(--wp--preset--color--white);
-					outline: 2px solid var(--wp--preset--color--custom-goal-#{$i});
+					border: 0.125rem solid var(--wp--preset--color--white);
+					outline: 0.2rem solid var(--wp--preset--color--primary-brand);
 				}
 			}
 		}

@@ -20,11 +20,11 @@ const domReady = () => {
 						button.setAttribute('aria-expanded', false);
 						button.setAttribute('aria-controls', expandoGroup.id);
 						button.setAttribute('role', 'button');
-						if (expandoGroup.classList.contains('closed')) {
-							expandoGroup.setAttribute('aria-expanded', false);
-						} else {
-							expandoGroup.setAttribute('aria-expanded', true);
-						}
+						// if (expandoGroup.classList.contains('closed')) {
+						// 	expandoGroup.setAttribute('aria-expanded', false);
+						// } else {
+						// 	expandoGroup.setAttribute('aria-expanded', true);
+						// }
 					});
 				}
 
@@ -87,9 +87,11 @@ const domReady = () => {
 
 				if (expandoGroup.classList.contains('closed')) {
 					this.setAttribute('aria-expanded', false);
+					// expandoGroup.setAttribute('aria-expanded', false);
 					expandoState = 'Collapsed group';
 				} else {
 					this.setAttribute('aria-expanded', true);
+					// expandoGroup.setAttribute('aria-expanded', true);
 					expandoState = 'Expanded group';
 				}
 

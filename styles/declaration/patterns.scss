@@ -40,7 +40,7 @@
 	}
 }
 
-
+.stories,
 .previous-stories-loop {
 	ul.is-layout-grid {
 		gap: 2rem;
@@ -71,5 +71,13 @@
 				}
 			}
 		}
+	}
+
+	.wp-block-post-featured-image {
+		width: 100%;
+	}
+
+	.wp-block-post-title {
+		width: 100%;
 	}
 }
