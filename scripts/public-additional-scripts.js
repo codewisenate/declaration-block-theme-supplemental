@@ -1,6 +1,9 @@
 import './declaration/actions';
 import './declaration/careers';
+import './declaration/definitions';
 import './declaration/expando';
+import './declaration/navigation';
+import './declaration/search';
 /**
  * DOM manipulation.
  * @return {void}

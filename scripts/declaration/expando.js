@@ -2,11 +2,11 @@
  * Actions icons DOM manipulation.
  * @return {void}
  */
-const domReady = () => {
+const domExpandoReady = () => {
 	/*
 	 * SafarIE bug requires 0ms timeout.
 	 */
-	setTimeout(function () {
+	setTimeout( () => {
 
 		const expandoGroups = document.querySelectorAll('.expando-group');
 
@@ -115,7 +115,7 @@ const domReady = () => {
 };
 
 if ('complete' === document.readyState) {
-	domReady();
+	domExpandoReady();
 } else {
-	document.addEventListener('DOMContentLoaded', domReady);
+	document.addEventListener('DOMContentLoaded', domExpandoReady);
 }

@@ -1,3 +1,13 @@
+.actions-header {
+	position: sticky;
+	z-index: 9;
+	top: 5.5rem;
+}
+
+body.admin-bar .actions-header {
+	top: calc(5.5rem + 32px);
+}
+
 body.single-actions:has(.taxonomy-action_goals a[href*="goal-1"]) {
 	.action-title-header {
 		background-color: var(--wp--preset--color--custom-goal-1) !important;
@@ -53,10 +63,6 @@ body.single-actions:has(.action-complete) {
 	position: relative;
 	border-radius: 50%;
 
-	&:focus-visible {
-		outline: 2px solid #222;
-	}
-
 	&::before,
 	&::after {
 		background-repeat: no-repeat;
@@ -68,8 +74,8 @@ body.single-actions:has(.action-complete) {
 
 	&.wp-block-mfb-meta-field-block {
 
-		height: 108px;
-		width: 108px;
+		height: 100%; //was: 108px
+		width: 100%; //was: 108px
 
 		.wp-block-query & {
 			scale: 75%;
@@ -262,10 +268,8 @@ body.single-actions:has(.action-complete) {
 	&::before,
 	&::after {
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: top center;
 		background-size: contain;
-		content: "";
-		display: inline-block;
 		height: 100%;
 		min-height: auto;
 		width: 100%;
@@ -274,7 +278,27 @@ body.single-actions:has(.action-complete) {
 		left: 0;
 	}
 
+	&:not(figure) { 
+		min-height: 12rem;
+
+		&::before,
+		&::after {
+			background-size: 108px;
+			font-size: 1rem;
+			height: calc(100% - 5rem);
+			min-width: 100%;
+		}
+	}
+
+	&::before {
+		content: attr(data-level);
+		display: block;
+		padding-block-start: 8rem;
+	}
+
 	&::after {
+		content: "";
+		display: inline-block;
 		position: absolute;
 		left: 0;
 		top: 0;

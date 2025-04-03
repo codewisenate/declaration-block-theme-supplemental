@@ -1,0 +1,117 @@
+a.icon-definition.icon-definition {
+	text-decoration-style: dashed;
+	-webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+	span.last-word {
+
+		&::after {
+			border: 1.5px solid currentcolor;
+			border-radius: 50%;
+			content: "?";
+			color: currentcolor;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			line-height: 1;
+			font-weight: bold;
+			font-style: normal;
+			width: 0.85rem;
+			height: 0.85rem;
+			font-size: 0.66rem;
+			vertical-align: middle;
+			margin-left: 0.25rem;
+			position: relative;
+			top: -0.1rem;
+		}
+	}
+
+	&:is(:hover, :focus-visible) {
+		text-decoration: currentcolor underline 2px dotted;
+		outline: 2px solid currentcolor;
+		outline-offset: 2px;
+		border-radius: 3px;
+	}
+}
+
+body:has(#dialog[open]) {
+	overflow: hidden;
+}
+
+#dialog {
+	background-color: var(--wp--preset--color--white);
+	border: 0;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadow);
+	color: var(--wp--preset--color--text-color);
+	max-width: 600px;
+
+	&::backdrop {
+		background-color: rgba(0 0 0 / 0.5);
+		backdrop-filter: blur(2px);
+	}
+
+	.dialog-content {
+
+		h2 {
+			background-color: var(--wp--preset--color--secondary-brand);
+			border-radius: 0 0.75rem 0.75rem 0;
+			color: var(--wp--preset--color--white);
+			display: inline-block;
+			font-size: 1.5rem;
+			padding-block: 0.5rem;
+			padding-inline-start: 3rem;
+			padding-inline-end: 2rem;
+			margin-block: 0;
+			margin-inline-end: 1rem;
+			position: relative;
+			left: -2rem;
+			outline: none;
+		}
+
+		>* {
+			padding-inline: 1rem;
+		}
+
+		>*:last-child {
+			padding-bottom: 0.5rem;
+		}
+	}
+
+	#close-dialog {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		font-size: 0;
+		background: top;
+		border: thin solid var(--wp--preset--color--transparent);
+		color: var(--wp--preset--color--text-color);
+		padding-inline: 0.5rem;
+		padding-top: 0.25rem;
+
+		&::after {
+			content: var(--close-icon);
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 1rem;
+			display: inline-block;
+			padding: 0.25rem;
+			width: 1rem;
+		}
+
+		&:hover,
+		&:focus-visible {
+			border: thin solid var(--wp--preset--color--text-color);
+			border-radius: 0.25rem;
+			outline: none;
+			cursor: pointer;
+		}
+	}
+}
+
+.glossary-content *:first-child {
+	margin-block-start: 0;
+}
+
+.glossary-results :is(p, blockquote, li) {
+	font-size: 1.15rem;
+}

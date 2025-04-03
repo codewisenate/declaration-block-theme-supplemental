@@ -2,11 +2,11 @@
  * Careers DOM manipulation.
  * @return {void}
  */
-const domReady = () => {
+const domCareersReady = () => {
 	/*
 	 * SafarIE bug requires 0ms timeout.
 	 */
-	setTimeout(function () {
+	setTimeout( () => {
 		// Get all job listing containers
 		const jobListingContainers = document.querySelectorAll('.job-listing-container');
 
@@ -54,7 +54,7 @@ const domReady = () => {
 };
 
 if ('complete' === document.readyState) {
-	domReady();
+	domCareersReady();
 } else {
-	document.addEventListener('DOMContentLoaded', domReady);
+	document.addEventListener('DOMContentLoaded', domCareersReady);
 }

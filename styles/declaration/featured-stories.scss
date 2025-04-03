@@ -1,5 +1,5 @@
 .featured-stories-loop {
-	
+
 	.featured-stories:nth-of-type(even) {
 		@media (min-width: 782px) {
 			.image-column {
@@ -7,4 +7,42 @@
 			}
 		}
 	}
+}
+
+
+.related-action-container ul,
+.related-story-container ul {
+	margin: 0;
+	padding: 0;
+}
+
+.related-action-container li,
+.related-story-container li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.related-action-container a,
+.related-story-container a  {
+	color: var(--wp--preset--color--white);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.related-action-container a::before {
+	content: "Action ";
+	display: inline-block;
+	padding-right: 0.5rem;
+}
+
+.related-story-container a {
+	color: var(--wp--preset--color--primary-brand);
+	text-decoration: underline;
+}
+
+.related-story-container a::before {
+	content: "Related story: ";
+	display: inline-block;
+	padding-right: 0.5rem;
 }

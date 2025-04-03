@@ -2,11 +2,11 @@
  * Actions icons DOM manipulation.
  * @return {void}
  */
-const domReady = () => {
+const domActionsReady = () => {
 	/*
 	 * SafarIE bug requires 0ms timeout.
 	 */
-	setTimeout(function () {
+	setTimeout( () => {
 
 		const iconDivs = document.querySelectorAll('.wp-block-mfb-meta-field-block.icon');
 
@@ -29,6 +29,9 @@ const domReady = () => {
 
 			iconDivs.forEach((div) => {
 				const classNames = div.classList;
+				const actionEl = div.closest('.action-results-container').querySelector('h3.wp-block-post-title');
+				let actionValue = '';
+				if (actionEl) { actionValue = actionEl.textContent || ''; }
 
 				// Find the matching class name among the four possibilities
 				const className = Array.from(classNames).find((name) =>
@@ -54,39 +57,40 @@ const domReady = () => {
 
 					const warningLabel = {
 						'stage': [
-							'Action not yet reporting – salmon icon – not reporting level',
-							'Action started – salmon icon – lowest level',
-							'Action in planning – salmon icon – mid-level',
-							'Action being implemented – salmon icon – high level',
-							'Action completed – salmon icon – transformed'
+							['Action not yet reporting – salmon icon – not reporting level','Not yet reporting'],
+							['Action started – salmon icon – lowest level','Started'],
+							['Action in planning – salmon icon – mid-level','Planning'],
+							['Action being implemented – salmon icon – high level','Implementation'],
+							['Action completed – salmon icon – transformed','Completed']
 						],
 						'complexity': [
-							'Complexity not determined – rock icon – not yet reporting level',
-							'Some complexity – rock icon – lowest level',
-							'Moderate complexity – rock icon – mid-level',
-							'Notable complexity – rock icon – high level',
-							'Complexity resolved – rock icon – transformed'
+							['Complexity not determined – rock icon – not yet reporting level','Not yet reporting'],
+							['Some complexity – rock icon – lowest level','Some complexity'],
+							['Moderate complexity – rock icon – mid-level','Moderate complexity'],
+							['Notable complexity – rock icon – high level','Notable complexity'],
+							['Complexity resolved – rock icon – transformed','Complexity resolved']
 						],
 						'risks': [
-							'Challenges not determined – Medicine bundle icon – not yet reporting level',
-							'Some challenges – Medicine bundle icon – lowest level',
-							'Moderate challenges – Medicine bundle icon – mid-level',
-							'Notable challenges – Medicine bundle icon – high level',
-							'Challenges resolved – Medicine bundle icon – transformed'
+							['Challenges not determined – Medicine bundle icon – not yet reporting level','Not yet reporting'],
+							['Some challenges – Medicine bundle icon – lowest level','Some challenges'],
+							['Moderate challenges – Medicine bundle icon – mid-level','Moderate challenges'],
+							['Notable challenges – Medicine bundle icon – high level','Notable challenges'],
+							['Challenges resolved – Medicine bundle icon – transformed','Challenges resolved']
 						],
 						'engagement': [
-							'Engagement not determined – weaving icon – not yet reporting level',
-							'Some engagement – weaving icon – lowest level',
-							'Moderate engagement – weaving icon – mid-level',
-							'Notable engagement – weaving icon – high level',
-							'Full engagement – weaving icon – transformed'
+							['Engagement not determined – weaving icon – not yet reporting level','Not yet reporting'],
+							['Some engagement – weaving icon – lowest level','Some engagement'],
+							['Moderate engagement – weaving icon – mid-level','Moderate engagement'],
+							['Notable engagement – weaving icon – high level','Notable engagement'],
+							['Full engagement – weaving icon – transformed','Full engagement']
 						],
 					}
 
-					const associatedLabel = warningLabel[className][number];
-					div.setAttribute('alt', `${associatedLabel}`);
-					div.setAttribute('title', `${associatedLabel}`);
-					div.setAttribute('tabindex', '0');
+					const associatedAltLabel = warningLabel[className][number][0];
+					const associatedLevelLabel = warningLabel[className][number][1];
+					div.setAttribute('alt', `Action ${actionValue} – ${associatedAltLabel}`);
+					div.setAttribute('title', `${associatedLevelLabel}`);
+					div.setAttribute('data-level', `${associatedLevelLabel}`);
 					div.setAttribute('role', 'img');
 				}
 			});
@@ -119,9 +123,6 @@ const domReady = () => {
 					console.error('Error fetching data:', error);
 				}
 			}
-
-			// Run the function
-			// checkActionItemsForDetailedView();
 
 			// Sorts list items within ul elements based on their titles.
 			const ulElements = document.querySelectorAll('.wp-block-query:not(.stories) > ul');
@@ -204,7 +205,7 @@ const domReady = () => {
 };
 
 if ('complete' === document.readyState) {
-	domReady();
+	domActionsReady();
 } else {
-	document.addEventListener('DOMContentLoaded', domReady);
+	document.addEventListener('DOMContentLoaded', domActionsReady);
 }
