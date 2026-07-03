@@ -61,28 +61,32 @@ const domActionsReady = () => {
 							['Action started – salmon icon – lowest level','Started'],
 							['Action in planning – salmon icon – mid-level','Planning'],
 							['Action being implemented – salmon icon – high level','Implementation'],
-							['Action completed – salmon icon – transformed','Completed']
+							['Action completed – salmon icon – transformed','Complete'],
+							['Discontinued – salmon icon – discontinued','Discontinued']
 						],
 						'complexity': [
 							['Complexity not determined – rock icon – not yet reporting level','Not yet reporting'],
-							['Some complexity – rock icon – lowest level','Some complexity'],
-							['Moderate complexity – rock icon – mid-level','Moderate complexity'],
-							['Notable complexity – rock icon – high level','Notable complexity'],
-							['Complexity resolved – rock icon – transformed','Complexity resolved']
+							['Some complexity – rock icon – lowest level','Low complexity'],
+							['Moderate complexity – rock icon – mid-level','Medium complexity'],
+							['Notable complexity – rock icon – high level','High complexity'],
+							['Complexity resolved – rock icon – transformed','Complete'],
+							['Discontinued – rock icon – discontinued','Discontinued']
 						],
 						'risks': [
 							['Challenges not determined – Medicine bundle icon – not yet reporting level','Not yet reporting'],
-							['Some challenges – Medicine bundle icon – lowest level','Some challenges'],
-							['Moderate challenges – Medicine bundle icon – mid-level','Moderate challenges'],
-							['Notable challenges – Medicine bundle icon – high level','Notable challenges'],
-							['Challenges resolved – Medicine bundle icon – transformed','Challenges resolved']
+							['Some challenges – Medicine bundle icon – lowest level','Low challenges'],
+							['Moderate challenges – Medicine bundle icon – mid-level','Medium challenges'],
+							['Notable challenges – Medicine bundle icon – high level','High challenges'],
+							['Challenges resolved – Medicine bundle icon – transformed','Complete'],
+							['Discontinued – Medicine bundle icon – discontinued','Discontinued']
 						],
 						'engagement': [
 							['Engagement not determined – weaving icon – not yet reporting level','Not yet reporting'],
-							['Some engagement – weaving icon – lowest level','Some engagement'],
-							['Moderate engagement – weaving icon – mid-level','Moderate engagement'],
-							['Notable engagement – weaving icon – high level','Notable engagement'],
-							['Full engagement – weaving icon – transformed','Full engagement']
+							['Some engagement – weaving icon – lowest level','Low engagement'],
+							['Moderate engagement – weaving icon – mid-level','Medium engagement'],
+							['Notable engagement – weaving icon – high level','High engagement'],
+							['Full engagement – weaving icon – transformed','Complete'],
+							['Discontinued – weaving icon – discontinued','Discontinued']
 						],
 					}
 

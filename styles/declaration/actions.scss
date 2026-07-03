@@ -58,6 +58,12 @@ body.single-actions:has(.action-complete) {
 	}
 }
 
+body.single-actions:has(.action-discontinued) {
+	.action-title::after {
+		content: " (discontinued)";
+	}
+}
+
 .icon {
 	margin: auto;
 	position: relative;
@@ -70,6 +76,10 @@ body.single-actions:has(.action-complete) {
 		background-size: contain;
 		content: "";
 		display: inline-block;
+	}
+
+	&::before {
+		pointer-events: none;
 	}
 
 	&.wp-block-mfb-meta-field-block {
@@ -260,6 +270,12 @@ body.single-actions:has(.action-complete) {
 			}
 		}
 
+		&.level-5 {
+			&::after {
+				background-image: var(--level-5-bg);
+			}
+		}
+
 		.value {
 			display: none;
 		}
@@ -332,6 +348,12 @@ body.single-actions:has(.action-complete) {
 	&.level-4 {
 		&::after {
 			background-image: var(--level-4-bg);
+		}
+	}
+
+	&.level-5 {
+		&::after {
+			background-image: var(--level-5-bg);
 		}
 	}
 }
